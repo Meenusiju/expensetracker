@@ -6,13 +6,13 @@ import * as legend from "d3-svg-legend";
 
 const Graph = () => {
 
-   const ref = useRef();
+   const containerRef = useRef();
    const dims = { height: 300, width: 300, radius: 150 };
    const cent = { x: (dims.width / 2 + 5), y: (dims.height / 2 + 5)};
 
     useEffect(() => {
     
-        const svg = d3.select(ref.current)
+        const svg = d3.select(containerRef.current)
         .append('svg')
             .attr('width', dims.width + 150)
             .attr('height', dims.height + 150);
@@ -133,7 +133,7 @@ const Graph = () => {
      
         
         <div className='canvas'>
-            <div ref={ref}>
+            <div ref={containerRef}>
                 
             </div>
         </div>
